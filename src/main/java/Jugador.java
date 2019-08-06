@@ -1,18 +1,29 @@
-package main.java;
+public  abstract class Jugador{
 
-public class Jugador {
+    protected Double skill;
+    protected Double peso;
+    protected Escoba escoba;
+    protected Equipo equipo;
+    protected Double nivelDeReflejos;
 
-    private Integer skill;
-    private Double peso;
-    private Escoba escoba;
-    private Categoria categoria;
-    private Equipo equipo;
+    public void setPeso(Double peso) {
+        this.peso = peso;
+    }
+
+    public Jugador(Equipo equipo, Double skill, Double peso, Escoba escoba, Double nivelDeReflejos) {
+        this.equipo=equipo;
+        this.skill=skill;
+        this.peso=peso;
+        this.escoba=escoba;
+        this.nivelDeReflejos=nivelDeReflejos;
+
+    }
 
     /**
      * PUNTO 1.a: saber nivel de manejo de escoba de un jugador
      **/
     public Double nivelDeManejoDeEscoba() {
-        return getSkill() / getPeso();
+        return skill / peso;
 
     }
 
@@ -20,55 +31,34 @@ public class Jugador {
      * PUNTO 1.b: saber la velocidad de un jugador
      **/
     public Double velocidadDeJugador() {
-        return this.getEscoba().velocidadEscoba() * nivelDeManejoDeEscoba();
+        return this.escoba.velocidadEscoba() * nivelDeManejoDeEscoba();
 
     }
 
     /**
      * PUNTO 1.c saber la habilidad de un jugador
      * **/
-    public Integer habilidadJugador() {
-        return this.getCategoria().habilidadDeLaCategoria();
+    public Double habilidadJugador() {
+        return this.velocidadDeJugador()+skill;
 
     }
 
-    public Integer getSkill() {
-        return skill;
+    /**PUNTO 2.a Saber si un jugador le pasa el trapo a otro**/
+    public Boolean lePasaElTrapoA(Jugador jugador){
+        return this.habilidadJugador()>=2*jugador.habilidadJugador();
+
     }
 
-    public void setSkill(Integer skill) {
-        this.skill = skill;
+    /**2b Saber si un jugador es groso**/
+    public Boolean esGroso(){
+        return (this.habilidadJugador()>equipo.promedioEquipo())&&velocidadDeJugador()>escoba.getValorArbitrario();
     }
 
-    public Double getPeso() {
-        return peso;
+    /**2c Saber si un jugador es estrella**/
+
+    public Boolean esJugadorEstrellaContra(Equipo equipo){
+        return equipo.getJugadores().stream().allMatch(j -> this.lePasaElTrapoA(j));
+
     }
 
-    public void setPeso(Double peso) {
-        this.peso = peso;
-    }
-
-    public Escoba getEscoba() {
-        return escoba;
-    }
-
-    public void setEscoba(Escoba escoba) {
-        this.escoba = escoba;
-    }
-
-    public Categoria getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
-
-    public Equipo getEquipo() {
-        return equipo;
-    }
-
-    public void setEquipo(Equipo equipo) {
-        this.equipo = equipo;
-    }
 }

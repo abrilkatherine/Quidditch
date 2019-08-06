@@ -1,8 +1,14 @@
-package main.java;
+public class SaetaDeFuego extends Escoba {
 
-public class SaetaDeFuego implements Escoba {
+    public SaetaDeFuego(String modelo){
+        super(modelo);
+    }
 
+    //1b
     public Double velocidadEscoba(){
-        return 100.00;
+        return 100.0;
+    }
+    public void recibeUnGolpe(){
+
     }
 }

@@ -1,6 +1,3 @@
-package test.java;
-
-import main.java.Jugador;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class JugadorTest {
 
-    Jugador jugador;
+ /*   Jugador jugador;
 
     @BeforeEach
     public void SetUp() {
@@ -24,5 +21,5 @@ public class JugadorTest {
         jugador.setPeso(peso);
         jugador.setSkill(skill);
         assertEquals(skill/peso, jugador.nivelDeManejoDeEscoba());
-    }
+    }*/
 }

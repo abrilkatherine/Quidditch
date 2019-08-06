@@ -1,13 +1,13 @@
-package main.java;
+public class Guardian extends Jugador {
 
-public class Guardian {
+    private Double fuerza;
 
-    private Integer velocidad;
-    private Integer skill;
-    private Integer nivelDeReflejos;
-    private Integer fuerza;
+    public Guardian(Equipo equipo, Double skill, Double peso, Escoba escoba, Double nivelDeReflejos, Double fuerza) {
+        super(equipo, skill, peso, escoba, nivelDeReflejos);
+        this.fuerza = fuerza;
+    }
 
-    public Integer habilidadDeLaCategoria(){
-        return velocidad+skill+nivelDeReflejos+fuerza;
+    public Double habilidadJugador(){
+        return super.habilidadJugador()+nivelDeReflejos+fuerza;
     }
 }

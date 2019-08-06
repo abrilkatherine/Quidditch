@@ -1,13 +1,16 @@
-package main.java;
+public class Golpeador extends Jugador {
 
-public class Golpeador implements Categoria {
+    private Double punteria;
+    private Double fuerza;
 
-    private Integer velocidad;
-    private Integer skill;
-    private Integer punteria;
-    private Integer fuerza;
+    public Golpeador(Equipo equipo, Double skill, Double peso, Escoba escoba, Double nivelDeReflejos, Double punteria, Double fuerza) {
+        super(equipo, skill, peso, escoba, nivelDeReflejos);
+        this.punteria = punteria;
+        this.fuerza = fuerza;
+    }
 
-    public Integer habilidadDeLaCategoria(){
-        return velocidad+skill+punteria+fuerza;
+    public Double habilidadJugador() {
+        return super.habilidadJugador() + punteria + fuerza;
     }
 }
+

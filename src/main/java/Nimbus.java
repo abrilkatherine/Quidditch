@@ -1,11 +1,13 @@
-package main.java;
-
 import java.util.Calendar;
 
-public class Nimbus implements Escoba {
+public class Nimbus extends Escoba {
 
     private Double salud= 70.00;
     private Integer añoDeFabricacion= 2010;
+
+    public Nimbus(String modelo) {
+        super(modelo);
+    }
 
     public Double velocidadEscoba(){
         return (80- (Calendar.getInstance().get(Calendar.YEAR)-añoDeFabricacion))*salud/100;

@@ -1,7 +1,16 @@
-package main.java;
+public abstract class Escoba {
 
-public interface Escoba {
+    private Integer valorArbitrario;
+    private String modelo;
 
-    Double velocidadEscoba();
+    public Escoba(String modelo){
+        this.modelo=modelo;
+    }
+
+    public Integer getValorArbitrario() {
+        return valorArbitrario;
+    }
+
+    public abstract Double velocidadEscoba();
 
 }
