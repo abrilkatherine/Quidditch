@@ -19,11 +19,8 @@ public class Equipo{
         return jugadores;
     }
 
-    public int getRandomElement(List<Integer> list)
-    {
-        Random rand = new Random();
-        return list.get(rand.nextInt(list.size()));
+    /**PUNTO 3. EL equio gana puntos por meter gol**/
+    public void meteGol(){
+        puntos=puntos+10;
     }
-
-    //private List<Integer> rangoDeJugador = IntStream.range(1, 3).boxed().collect(Collectors.toList());
 }

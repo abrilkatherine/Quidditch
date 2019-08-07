@@ -1,4 +1,4 @@
-public  abstract class Jugador{
+public  abstract class Jugador {
 
     protected Double skill;
     protected Double peso;
@@ -11,11 +11,11 @@ public  abstract class Jugador{
     }
 
     public Jugador(Equipo equipo, Double skill, Double peso, Escoba escoba, Double nivelDeReflejos) {
-        this.equipo=equipo;
-        this.skill=skill;
-        this.peso=peso;
-        this.escoba=escoba;
-        this.nivelDeReflejos=nivelDeReflejos;
+        this.equipo = equipo;
+        this.skill = skill;
+        this.peso = peso;
+        this.escoba = escoba;
+        this.nivelDeReflejos = nivelDeReflejos;
 
     }
 
@@ -37,28 +37,44 @@ public  abstract class Jugador{
 
     /**
      * PUNTO 1.c saber la habilidad de un jugador
-     * **/
+     **/
     public Double habilidadJugador() {
-        return this.velocidadDeJugador()+skill;
+        return this.velocidadDeJugador() + skill;
 
     }
 
-    /**PUNTO 2.a Saber si un jugador le pasa el trapo a otro**/
-    public Boolean lePasaElTrapoA(Jugador jugador){
-        return this.habilidadJugador()>=2*jugador.habilidadJugador();
+    /**
+     * PUNTO 2.a Saber si un jugador le pasa el trapo a otro
+     **/
+    public Boolean lePasaElTrapoA(Jugador jugador) {
+        return this.habilidadJugador() >= 2 * jugador.habilidadJugador();
 
     }
 
-    /**2b Saber si un jugador es groso**/
-    public Boolean esGroso(){
-        return (this.habilidadJugador()>equipo.promedioEquipo())&&velocidadDeJugador()>escoba.getValorArbitrario();
+    /**
+     * 2b Saber si un jugador es groso
+     **/
+    public Boolean esGroso() {
+        return (this.habilidadJugador() > equipo.promedioEquipo()) && velocidadDeJugador() > escoba.getValorArbitrario();
     }
 
-    /**2c Saber si un jugador es estrella**/
+    /**
+     * 2c Saber si un jugador es estrella
+     **/
 
-    public Boolean esJugadorEstrellaContra(Equipo equipo){
+    public Boolean esJugadorEstrellaContra(Equipo equipo) {
         return equipo.getJugadores().stream().allMatch(j -> this.lePasaElTrapoA(j));
 
     }
 
+    /** PUNTO 3 El que bloquea gana 10 puntos**/
+    public void bloqueoA(Jugador jugador) {
+        skill = skill + 10.0;
+    }
+    /**PUNTO 4.b Saber si un jugador es blnaco util**/
+    public abstract Boolean esBlancoUtil();
+
+    public Boolean tieneLaQuaffle(){
+    return true;
+    }
 }
