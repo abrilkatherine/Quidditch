@@ -12,5 +12,10 @@ public class Golpeador extends Jugador {
     public Double habilidadJugador() {
         return super.habilidadJugador() + punteria + fuerza;
     }
+
+    @Override
+    public Boolean esBlancoUtil() {
+        return null;
+    }
 }
 

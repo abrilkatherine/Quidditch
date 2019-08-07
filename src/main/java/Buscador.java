@@ -11,4 +11,9 @@ public class Buscador extends Jugador {
     public Double habilidadJugador(){
         return super.habilidadJugador()+nivelDeVision;
     }
+
+    @Override
+    public Boolean esBlancoUtil() {
+        return null;
+    }
 }
