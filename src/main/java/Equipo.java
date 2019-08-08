@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
 public class Equipo{
 
     private List<Jugador> jugadores= new ArrayList<>();
-    Integer puntos;
+    Integer puntos = 0;
 
     public Double promedioEquipo(){
         return getJugadores().stream().mapToDouble(jugador -> jugador.habilidadJugador()).sum()/(getJugadores().size());
@@ -21,7 +21,5 @@ public class Equipo{
     }
 
     /**PUNTO 3. EL equio gana puntos por meter gol**/
-    public void meteGol(){
-        puntos=puntos+10;
-    }
+
 }

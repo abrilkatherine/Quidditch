@@ -2,9 +2,10 @@ public class Cazador extends Jugador{
 
     private Integer punteria;
     private Integer fuerza;
+    private Boolean poseeLaQuaffle;
 
     public void SetFuerza(Integer fuerza) {
-        this. fuerza= fuerza;
+        this.fuerza= fuerza;
     }
 
     public void SetPunteria(Integer punteria) {
@@ -40,8 +41,34 @@ public class Cazador extends Jugador{
         return this.tieneLaQuaffle()==true;
     }
 
+    @Override
+    public Boolean tieneLaQuaffle() {
+        return poseeLaQuaffle;
+    }
+
     /**4.PUNTO 3. el cazador pierde la Quaffle**/
     public Boolean pierdeLaQuaffle(){
         return this.tieneLaQuaffle()==false;
     }
+
+    @Override
+    public Boolean puedeBloquar(Cazador cazador) {
+        return this.lePasaElTrapoA(cazador);
+    }
+
+    public Boolean seBloqueaElTiro(Equipo equipoContrario) {
+       return this.tieneLaQuaffle() == true && equipoContrario.getJugadores().stream().anyMatch(jugador -> jugador.puedeBloquar(this));
+    }
+
+    public void meteGol(Equipo nuestroEquipo, Equipo equipoContrario){
+
+        if (this.seBloqueaElTiro(equipoContrario)==false){
+            nuestroEquipo.puntos+=10;
+            this.skill+=5;
+        }
+    }
+
+
 }
+
+

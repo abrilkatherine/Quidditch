@@ -1,6 +1,6 @@
 public  abstract class Jugador {
 
-    protected Double skill;
+    protected Double skill = 0.0;
     protected Double peso;
     protected Escoba escoba;
     protected Equipo equipo;
@@ -74,7 +74,9 @@ public  abstract class Jugador {
     /**PUNTO 4.b Saber si un jugador es blnaco util**/
     public abstract Boolean esBlancoUtil();
 
-    public Boolean tieneLaQuaffle(){
-    return true;
-    }
+    public abstract Boolean tieneLaQuaffle();
+
+    /**PUNTO 4a**/
+
+    public abstract Boolean puedeBloquar(Cazador cazador);
 }
