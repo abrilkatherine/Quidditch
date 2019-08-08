@@ -4,7 +4,7 @@ public class SaetaDeFuego extends Escoba {
         super(modelo);
     }
 
-    //1b
+    //1.b
     public Double velocidadEscoba(){
         return 100.0;
     }
