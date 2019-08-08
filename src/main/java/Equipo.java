@@ -7,6 +7,7 @@ import java.util.stream.IntStream;
 public class Equipo{
 
     private List<Jugador> jugadores= new ArrayList<>();
+    Integer puntos;
 
     public Double promedioEquipo(){
         return getJugadores().stream().mapToDouble(jugador -> jugador.habilidadJugador()).sum()/(getJugadores().size());

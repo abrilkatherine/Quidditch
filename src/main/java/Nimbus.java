@@ -11,7 +11,6 @@ public class Nimbus extends Escoba {
 
     public Double velocidadEscoba(){
         return (80- (Calendar.getInstance().get(Calendar.YEAR)-añoDeFabricacion))*salud/100;
-
     }
 
     public Double getSalud() {
