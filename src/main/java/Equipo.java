@@ -21,6 +21,6 @@ public class Equipo{
 
     /**PUNTO 3. EL equio gana puntos por meter gol**/
     public void meteGol(){
-        puntos=puntos+10;
+         int puntos = +10;
     }
 }
