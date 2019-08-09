@@ -27,14 +27,20 @@ public class Guardian extends Jugador {
     }
 
     @Override
-    public Boolean puedeBloquar(Cazador cazador) {
+    public Boolean puedeBloquear(Cazador cazador) {
         return this.getRandomElement(rango)==3;
     }
-
+    /* Numero random para el metodo puedeBloquear*/
     List<Integer> rango= IntStream.range(1, 3).boxed().collect(Collectors.toList());
     public int getRandomElement(List<Integer>list){
         Random rand = new Random();
         return list.get(rand.nextInt(list.size()));
 
+    }
+
+    @Override
+    public void golpearJugadorConBludger(Jugador unjugador) {
+        unjugador.skill-=2;
+        unjugador.escoba.recibeUnGolpe();
     }
 }
