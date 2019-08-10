@@ -22,4 +22,6 @@ public class Equipo{
 
     /**PUNTO 3. EL equio gana puntos por meter gol**/
 
+
+
 }
