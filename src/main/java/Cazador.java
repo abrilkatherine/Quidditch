@@ -50,14 +50,19 @@ public class Cazador extends Jugador{
     public Boolean pierdeLaQuaffle(){
         return this.tieneLaQuaffle()==false;
     }
-
-    @Override
-    public Boolean puedeBloquar(Cazador cazador) {
+    public Boolean puedeBloquear(Cazador cazador) {
         return this.lePasaElTrapoA(cazador);
     }
 
+    @Override
+    public void golpearJugadorConBludger(Jugador unjugador) {
+        unjugador.skill-=2;
+        this.escoba.recibeUnGolpe();
+        this.pierdeLaQuaffle();
+    }
+
     public Boolean seBloqueaElTiro(Equipo equipoContrario) {
-       return this.tieneLaQuaffle() == true && equipoContrario.getJugadores().stream().anyMatch(jugador -> jugador.puedeBloquar(this));
+       return this.tieneLaQuaffle() == true && equipoContrario.getJugadores().stream().anyMatch(jugador -> jugador.puedeBloquear(this));
     }
 
     public void meteGol(Equipo nuestroEquipo, Equipo equipoContrario){

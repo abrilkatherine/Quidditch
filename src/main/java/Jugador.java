@@ -24,7 +24,6 @@ public  abstract class Jugador {
      **/
     public Double nivelDeManejoDeEscoba() {
         return skill / peso;
-
     }
 
     /**
@@ -78,5 +77,6 @@ public  abstract class Jugador {
 
     /**PUNTO 4a**/
 
-    public abstract Boolean puedeBloquar(Cazador cazador);
+    public abstract Boolean puedeBloquear(Cazador cazador);
+    public abstract void golpearJugadorConBludger(Jugador unjugador);
 }
