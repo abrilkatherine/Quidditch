@@ -22,7 +22,6 @@ public class BuscadorTest {
         when(primeraNimbus.velocidadEscoba()).thenReturn(90.0);
         assertEquals(158.75, willy.habilidadJugador());
 
-
     }
 
 }
