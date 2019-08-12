@@ -14,7 +14,7 @@ public class BuscadorTest {
 
     @BeforeEach
     public void setUp(){
-        willy=new Buscador(equipoA, 70.0, 80.0, primeraNimbus, 10,5.0);
+        willy=new Buscador(equipoA, 70.0, 80.0, primeraNimbus, 10,5.0, false);
     }
     //El valor esperado de la habilidadJugador
     @Test

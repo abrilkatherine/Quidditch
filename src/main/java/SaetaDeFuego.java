@@ -1,5 +1,5 @@
 public class SaetaDeFuego extends Escoba {
-
+Double saludEscoba=100.0;
     public SaetaDeFuego(String modelo){
         super(modelo);
     }
@@ -8,7 +8,11 @@ public class SaetaDeFuego extends Escoba {
     public Double velocidadEscoba(){
         return 100.0;
     }
+
+    @Override
+
     public void recibeUnGolpe(){
+        this.saludEscoba+=0;
 
     }
 }

@@ -28,4 +28,9 @@ public class Nimbus extends Escoba {
     public void setAñoDeFabricacion(Integer añoDeFabricacion) {
         this.añoDeFabricacion = añoDeFabricacion;
     }
+
+    @Override
+    public void recibeUnGolpe() {
+        this.salud-=10;
+    }
 }

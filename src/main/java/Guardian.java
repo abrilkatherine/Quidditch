@@ -8,8 +8,8 @@ public class Guardian extends Jugador {
     private Double fuerza;
     private Boolean poseeLaQuaffle = false;
 
-    public Guardian(Equipo equipo, Double skill, Double peso, Escoba escoba, Double nivelDeReflejos, Double fuerza) {
-        super(equipo, skill, peso, escoba, nivelDeReflejos);
+    public Guardian(Equipo equipo, Double skill, Double peso, Escoba escoba, Double nivelDeReflejos, Double fuerza, Boolean poseeLaQuaffle) {
+        super(equipo, skill, peso, escoba, nivelDeReflejos, poseeLaQuaffle);
         this.fuerza = fuerza;
     }
 
@@ -27,14 +27,20 @@ public class Guardian extends Jugador {
     }
 
     @Override
-    public Boolean puedeBloquar(Cazador cazador) {
+    public Boolean puedeBloquear(Cazador cazador) {
         return this.getRandomElement(rango)==3;
     }
-
+    /* Numero random para el metodo puedeBloquear*/
     List<Integer> rango= IntStream.range(1, 3).boxed().collect(Collectors.toList());
     public int getRandomElement(List<Integer>list){
         Random rand = new Random();
         return list.get(rand.nextInt(list.size()));
 
+    }
+
+    @Override
+    public void golpearJugadorConBludger(Jugador unjugador) {
+        unjugador.skill-=2;
+        unjugador.escoba.recibeUnGolpe();
     }
 }

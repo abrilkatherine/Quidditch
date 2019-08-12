@@ -2,7 +2,7 @@ public class Cazador extends Jugador{
 
     private Integer punteria;
     private Integer fuerza;
-    private Boolean poseeLaQuaffle;
+
 
     public void SetFuerza(Integer fuerza) {
         this.fuerza= fuerza;
@@ -12,8 +12,8 @@ public class Cazador extends Jugador{
         this.punteria = punteria;
     }
 
-    public Cazador(Equipo equipo, Double skill, Double peso, Escoba escoba, Double nivelDeReflejos,Integer punteria, Integer fuerza){
-        super(equipo, peso, skill, escoba, nivelDeReflejos);
+    public Cazador(Equipo equipo, Double skill, Double peso, Escoba escoba, Double nivelDeReflejos,Integer punteria, Integer fuerza, Boolean poseeLaQuaffle){
+        super(equipo, peso, skill, escoba, nivelDeReflejos, poseeLaQuaffle);
         this.punteria=punteria;
         this.fuerza=fuerza;
     }
@@ -47,17 +47,23 @@ public class Cazador extends Jugador{
     }
 
     /**4.PUNTO 3. el cazador pierde la Quaffle**/
-    public Boolean pierdeLaQuaffle(){
-        return this.tieneLaQuaffle()==false;
+    public void pierdeLaQuaffle(){
+         this.poseeLaQuaffle=false;
     }
 
-    @Override
-    public Boolean puedeBloquar(Cazador cazador) {
+    public Boolean puedeBloquear(Cazador cazador) {
         return this.lePasaElTrapoA(cazador);
     }
 
+    @Override
+    public void golpearJugadorConBludger(Jugador unjugador) {
+        unjugador.skill-=2;
+        this.escoba.recibeUnGolpe();
+        unjugador.pierdeLaQuaffle();
+    }
+
     public Boolean seBloqueaElTiro(Equipo equipoContrario) {
-       return this.tieneLaQuaffle() == true && equipoContrario.getJugadores().stream().anyMatch(jugador -> jugador.puedeBloquar(this));
+       return this.tieneLaQuaffle() == true && equipoContrario.getJugadores().stream().anyMatch(jugador -> jugador.puedeBloquear(this));
     }
 
     public void meteGol(Equipo nuestroEquipo, Equipo equipoContrario){

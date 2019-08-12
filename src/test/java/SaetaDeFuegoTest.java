@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 
 public class SaetaDeFuegoTest {
 
-    SaetaDeFuego fully;
+   /* SaetaDeFuego fully;
 
     @BeforeEach
 
@@ -16,5 +16,5 @@ public class SaetaDeFuegoTest {
 
     public void velocidadEscoba(){
 
-    }
+    } */
 }

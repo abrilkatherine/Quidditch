@@ -5,17 +5,19 @@ public  abstract class Jugador {
     protected Escoba escoba;
     protected Equipo equipo;
     protected Double nivelDeReflejos;
+    protected Boolean poseeLaQuaffle;
 
     public void setPeso(Double peso) {
         this.peso = peso;
     }
 
-    public Jugador(Equipo equipo, Double skill, Double peso, Escoba escoba, Double nivelDeReflejos) {
+    public Jugador(Equipo equipo, Double skill, Double peso, Escoba escoba, Double nivelDeReflejos, Boolean poseeLaQuaffle) {
         this.equipo = equipo;
         this.skill = skill;
         this.peso = peso;
         this.escoba = escoba;
         this.nivelDeReflejos = nivelDeReflejos;
+        this.poseeLaQuaffle= poseeLaQuaffle;
 
     }
 
@@ -24,7 +26,6 @@ public  abstract class Jugador {
      **/
     public Double nivelDeManejoDeEscoba() {
         return skill / peso;
-
     }
 
     /**
@@ -66,6 +67,9 @@ public  abstract class Jugador {
         return equipo.getJugadores().stream().allMatch(j -> this.lePasaElTrapoA(j));
 
     }
+    public void pierdeLaQuaffle(){
+        this.poseeLaQuaffle=false;
+    }
 
     /** PUNTO 3 El que bloquea gana 10 puntos**/
     public void bloqueoA(Jugador jugador) {
@@ -78,5 +82,6 @@ public  abstract class Jugador {
 
     /**PUNTO 4a**/
 
-    public abstract Boolean puedeBloquar(Cazador cazador);
+    public abstract Boolean puedeBloquear(Cazador cazador);
+    public abstract void golpearJugadorConBludger(Jugador unjugador);
 }
