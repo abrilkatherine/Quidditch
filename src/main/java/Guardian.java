@@ -8,8 +8,8 @@ public class Guardian extends Jugador {
     private Double fuerza;
     private Boolean poseeLaQuaffle = false;
 
-    public Guardian(Equipo equipo, Double skill, Double peso, Escoba escoba, Double nivelDeReflejos, Double fuerza) {
-        super(equipo, skill, peso, escoba, nivelDeReflejos);
+    public Guardian(Equipo equipo, Double skill, Double peso, Escoba escoba, Double nivelDeReflejos, Double fuerza, Boolean poseeLaQuaffle) {
+        super(equipo, skill, peso, escoba, nivelDeReflejos, poseeLaQuaffle);
         this.fuerza = fuerza;
     }
 
