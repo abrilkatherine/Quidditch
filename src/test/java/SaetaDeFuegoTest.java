@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class SaetaDeFuegoTest {
 
@@ -9,13 +10,13 @@ public class SaetaDeFuegoTest {
     @BeforeEach
 
     public void setUp() {
-        fully = new SaetaDeFuego();
+        fully = new SaetaDeFuego ("Luxe");
 
     }
 
     @Test
 
-    public Double velocidadEscoba() {
-    assertFalse (130.00, fully.velocidadEscoba());    }
+    public void velocidadEscoba() {
+    assertNotEquals (130.00, fully.velocidadEscoba());    }
 
 }
