@@ -1,5 +1,8 @@
 public class SaetaDeFuego extends Escoba {
-Double saludEscoba=100.0;
+
+private Double saludEscoba=100.0;
+private Integer velocidadPorDefecto=0;
+
     public SaetaDeFuego(String modelo){
         super(modelo);
     }
