@@ -28,18 +28,11 @@ public class Golpeador extends Jugador {
     public Boolean puedeBloquear(Cazador cazador) {
         return this.esGroso();
     }
-<<<<<<< HEAD
     public void golpearJugadorConBludger(Jugador unjugador) {
         unjugador.skill-=2;
         this.escoba.recibeUnGolpe();
-            }
-=======
 
-    @Override
-    public void golpearJugadorConBludger(Jugador unjugador) {
-        unjugador.skill-=2;
-        this.escoba.recibeUnGolpe();
     }
->>>>>>> 6d4e44bc70be5d336d9fd856d020732e4b943b8f
+
 }
 

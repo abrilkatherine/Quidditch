@@ -20,7 +20,7 @@ public class BuscadorTest {
     @Test
     public void habilidadJugador(){
         when(primeraNimbus.velocidadEscoba()).thenReturn(90.0);
-        assertEquals(java.util.Optional.of(158.75), willy.habilidadJugador());
+        assertEquals(158.75, willy.habilidadJugador().doubleValue());
 
     }
 

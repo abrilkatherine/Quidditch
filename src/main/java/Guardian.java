@@ -13,9 +13,8 @@ public class Guardian extends Jugador {
         this.fuerza = fuerza;
     }
 
-    public Double habilidadJugador(){
-        return super.habilidadJugador()+nivelDeReflejos+fuerza;
-    }
+    public Double habilidadJugador(){ return super.habilidadJugador()+nivelDeReflejos+fuerza;    }
+
 
     @Override
     public Boolean esBlancoUtil() {
