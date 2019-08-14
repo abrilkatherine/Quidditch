@@ -29,7 +29,6 @@ public class Golpeador extends Jugador {
         return this.esGroso();
     }
 
-    @Override
     public void golpearJugadorConBludger(Jugador unjugador) {
         unjugador.skill-=2;
         this.escoba.recibeUnGolpe();
