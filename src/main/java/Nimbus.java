@@ -2,6 +2,7 @@ import java.util.Calendar;
 
 public class Nimbus extends Escoba {
 
+    private Integer velocidadPorDefecto=0;
     private Double salud= 70.00;
     private Integer añoDeFabricacion= 2010;
 
@@ -32,5 +33,13 @@ public class Nimbus extends Escoba {
     @Override
     public void recibeUnGolpe() {
         this.salud-=10;
+    }
+
+    public Integer getVelocidadPorDefecto() {
+        return velocidadPorDefecto;
+    }
+
+    public void setVelocidadPorDefecto(Integer velocidadPorDefecto) {
+        this.velocidadPorDefecto = velocidadPorDefecto;
     }
 }

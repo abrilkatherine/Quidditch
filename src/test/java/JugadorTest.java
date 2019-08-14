@@ -1,25 +1,47 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 
 public class JugadorTest {
 
- /*   Jugador jugador;
+    private Jugador jugador;
+    private Equipo equipo;
+    private Nimbus nimbus;
+    private List<Jugador> jugadores;
+    private Buscador buscador;
+    private Cazador cazador;
+    private SaetaDeFuego saetita;
+    private Guardian guardian;
 
     @BeforeEach
-    public void SetUp() {
-        jugador = new Jugador();
+    public void setUp() {
+
+        equipo = mock(Equipo.class);
+        jugadores = new ArrayList<>();
+        nimbus = mock(Nimbus.class);
+        saetita = new SaetaDeFuego("A fuego lento 3000");
+        guardian = new Guardian(equipo, 20.0, 30.0, saetita, 45.0, 25.0, null);
+        buscador = new Buscador(equipo, 60.0, 40.0, nimbus, 30, 35.0, null);
+        cazador = new Cazador(equipo, 15.0, 80.0, nimbus, 35.0, 25, 35, null);
+
     }
 
     @Test
-    public void nivelDeManejoDeEscoba() {
-        //Seteamos el contexto
-        Double peso = 50.0;
-        Integer skill = 10;
-        jugador.setPeso(peso);
-        jugador.setSkill(skill);
-        assertEquals(skill/peso, jugador.nivelDeManejoDeEscoba());
-    }*/
+    void esGroso() {
+
+        when(buscador.habilidadJugador()).thenReturn(6.0);
+        when(equipo.promedioEquipo()).thenReturn(10.0);
+        when(nimbus.velocidadEscoba()).thenReturn(10.0);
+        when(nimbus.getVelocidadPorDefecto()).thenReturn(5);
+        assertTrue(buscador.esGroso());
+    }
+
 }
+

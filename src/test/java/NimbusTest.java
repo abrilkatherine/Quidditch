@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class SaetaDeFuegoTest {
+public class NimbusTest {
 
    /* SaetaDeFuego fully;
 
