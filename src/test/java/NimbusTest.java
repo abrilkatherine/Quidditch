@@ -4,11 +4,11 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class NimbusTest {
 
-    SaetaDeFuego fully;
+    Nimbus fully;
 
     @BeforeEach
     public void setUp() {
-        fully = new SaetaDeFuego ("Luxe");
+        fully = new Nimbus ("Luxe");
     }
 
     @Test
