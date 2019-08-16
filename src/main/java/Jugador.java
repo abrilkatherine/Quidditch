@@ -1,6 +1,6 @@
 public  abstract class Jugador {
 
-    protected Double skill = 0.0;
+    protected Double skill;
     protected Double peso;
     protected Escoba escoba;
     protected Equipo equipo;
@@ -56,7 +56,7 @@ public  abstract class Jugador {
      * 2b Saber si un jugador es groso
      **/
     public Boolean esGroso() {
-        return (this.habilidadJugador() > equipo.promedioEquipo()) && velocidadDeJugador() > escoba.getValorArbitrario();
+        return (this.habilidadJugador() > equipo.promedioEquipo()) && velocidadDeJugador() > escoba.getVelocidadPorDefecto();
     }
 
     /**
