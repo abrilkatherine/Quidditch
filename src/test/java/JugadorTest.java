@@ -45,7 +45,7 @@ public class JugadorTest {
 
     @Test
     void velocidadJugador(){
-        assertEquals(66.66, guardian.velocidadDeJugador().doubleValue());
+        assertEquals(67, Math.round(guardian.velocidadDeJugador().doubleValue()*100/100));
     }
 
     @Test
