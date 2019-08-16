@@ -1,8 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class Equipo{
 
@@ -18,6 +15,9 @@ public class Equipo{
     }
     public List<Jugador>getJugadores(){
         return jugadores;
+    }
+
+    public void SetJugadores(List<Jugador> jugadores) {
     }
 
     /**PUNTO 3. EL equio gana puntos por meter gol**/

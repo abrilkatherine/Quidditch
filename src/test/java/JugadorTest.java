@@ -4,8 +4,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -34,6 +33,24 @@ public class JugadorTest {
         cazador = new Cazador(equipo, 15.0, 80.0, nimbus, 35.0, 25, 35, null);
         cazador1= new Cazador (equipo, 50.0, 120.0, nimbus, 75.0, 75, 80, null);
 
+        equipo.SetJugadores(jugadores);
+        jugadores.add(cazador);
+        jugadores.add(buscador);
+    }
+
+    @Test
+    void nivelDeManejoDeEscoba(){
+        assertEquals(buscador.nivelDeManejoDeEscoba(), 0.1);
+    }
+
+    @Test
+    void velocidadJugador(){
+        assertEquals(guardian.velocidadDeJugador(), 10.5);
+    }
+
+    @Test
+    void habilidadJugador(){
+        assertEquals(cazador.habilidadJugador(),30.0);
     }
 
     @Test
@@ -51,6 +68,7 @@ public class JugadorTest {
     void cazadorNoLePasaElTrapoABuscador() {
         assertFalse(cazador.lePasaElTrapoA(buscador));
     }
+
     @Test
     void cazadorLePasaElTrapoABuscador() {
         assertTrue(cazador1.lePasaElTrapoA(buscador));
