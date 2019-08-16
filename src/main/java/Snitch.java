@@ -1,12 +1,6 @@
-public class Snitch implements Pelota {
+public class Snitch {
     private Integer puntos= 150;
 
     public Integer getPuntos() {
-        return puntos;
-    }
-
-    @Override
-    public Integer puntos() {
-        return puntos;
-    }
+        return puntos;}
 }

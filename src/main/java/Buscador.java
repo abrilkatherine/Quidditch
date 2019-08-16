@@ -10,8 +10,8 @@ public class Buscador extends Jugador {
     private Boolean poseeLaQuafle;
     private Double turnos=0.0;
 
-    public Buscador (Equipo equipo, Double peso, Double skill, Escoba escoba, Integer nivelDeVision, Double nivelDeReflejos, Boolean poseeLaQuafle){
-        super(equipo, peso, skill, escoba, nivelDeReflejos, poseeLaQuafle);
+    public Buscador (Equipo equipo, Double skill, Double peso, Escoba escoba, Integer nivelDeVision, Double nivelDeReflejos, Boolean poseeLaQuafle){
+        super(equipo, skill, peso, escoba, nivelDeReflejos, poseeLaQuafle);
         this.nivelDeVision= nivelDeVision;
     }
 
