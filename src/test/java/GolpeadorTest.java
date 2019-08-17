@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
         @Test
         public void elGolpeadorGolpeConUnaBludgerAlGuardian() {
             rocky.golpearJugadorConBludger(taylor);
-            assertEquals(rocky.skill.doubleValue(), 50.0);
+            assertEquals(taylor.skill.doubleValue(), 23.0);
 
         }
 

@@ -22,9 +22,6 @@ public class EquipoTest {
         equipo2 = new Equipo();
         jugadorNumero1 = mock(Jugador.class);
         jugadorNumero2 = mock(Jugador.class);
-
-        jugadores.add(jugadorNumero1);
-        jugadores.add(jugadorNumero2);
         equipo1.SetJugadores(jugadorNumero1);
         equipo2.SetJugadores(jugadorNumero2);
     }
