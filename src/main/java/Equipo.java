@@ -17,8 +17,11 @@ public class Equipo{
         return jugadores;
     }
 
-    public void SetJugadores(Jugador jugador) {
-        jugadores.add(jugador);
+    public void agregarJugadores(Jugador jugador) throws NoSePuedenAgregarJugadoresException{
+        if(jugadores.size()==7){
+            throw new NoSePuedenAgregarJugadoresException("Maximo de jugadores por equipo");
+        }
+       else {jugadores.add(jugador);}
     }
 
     /**PUNTO 3. EL equio gana puntos por meter gol**/

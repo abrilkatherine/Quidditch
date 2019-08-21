@@ -33,8 +33,8 @@ public class JugadorTest {
         cazador = new Cazador(equipo, 15.0, 80.0, nimbus, 35.0, 25, 35, null);
         cazador1= new Cazador (equipo, 50.0, 120.0, nimbus, 75.0, 75, 80, null);
 
-        equipo.SetJugadores(cazador);
-        equipo.SetJugadores(buscador);
+        equipo.agregarJugadores(cazador);
+        equipo.agregarJugadores(buscador);
 
     }
 
