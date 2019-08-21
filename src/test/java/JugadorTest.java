@@ -33,24 +33,24 @@ public class JugadorTest {
         cazador = new Cazador(equipo, 15.0, 80.0, nimbus, 35.0, 25, 35, null);
         cazador1= new Cazador (equipo, 50.0, 120.0, nimbus, 75.0, 75, 80, null);
 
-        equipo.SetJugadores(jugadores);
-        jugadores.add(cazador);
-        jugadores.add(buscador);
+        equipo.SetJugadores(cazador);
+        equipo.SetJugadores(buscador);
+
     }
 
     @Test
     void nivelDeManejoDeEscoba(){
-        assertEquals(buscador.nivelDeManejoDeEscoba(), 0.1);
+        assertEquals(buscador.nivelDeManejoDeEscoba().doubleValue(), 1.5);
     }
 
     @Test
     void velocidadJugador(){
-        assertEquals(guardian.velocidadDeJugador(), 10.5);
+        assertEquals(67, Math.round(guardian.velocidadDeJugador().doubleValue()*100/100));
     }
 
     @Test
     void habilidadJugador(){
-        assertEquals(cazador.habilidadJugador(),30.0);
+        assertEquals(cazador.habilidadJugador().doubleValue(),140.0);
     }
 
     @Test

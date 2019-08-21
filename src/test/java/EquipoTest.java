@@ -4,7 +4,9 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class EquipoTest {
 
@@ -18,16 +20,15 @@ public class EquipoTest {
     void setUp(){
         equipo1 = new Equipo();
         equipo2 = new Equipo();
-        jugadores = new ArrayList<>();
         jugadorNumero1 = mock(Jugador.class);
         jugadorNumero2 = mock(Jugador.class);
-
-        jugadores.add(jugadorNumero1);
-        jugadores.add(jugadorNumero2);
-        equipo1.setJugadores(jugadores);
+        equipo1.SetJugadores(jugadorNumero1);
+        equipo2.SetJugadores(jugadorNumero2);
     }
 
-    @Test
-    when(jugadorNumero1.esJugadorEstrellaContra((equipo2))).thenReturn(true);
-    assertTrue(equipo1.tieneUnJugadorEstrella(equipo2));
+   @Test
+   void jugadorEsJugadorEstrella() {
+       when(jugadorNumero1.esJugadorEstrellaContra((equipo2))).thenReturn(true);
+       assertTrue(equipo1.tieneUnJugadorEstrella(equipo2));
+   }
 }

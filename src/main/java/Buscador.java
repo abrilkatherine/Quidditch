@@ -9,9 +9,10 @@ public class Buscador extends Jugador {
     private Integer nivelDeVision;
     private Boolean poseeLaQuafle;
     private Double turnos=0.0;
+    private Boolean estaGolpeado=false;
 
-    public Buscador (Equipo equipo, Double peso, Double skill, Escoba escoba, Integer nivelDeVision, Double nivelDeReflejos, Boolean poseeLaQuafle){
-        super(equipo, peso, skill, escoba, nivelDeReflejos, poseeLaQuafle);
+    public Buscador (Equipo equipo, Double skill, Double peso, Escoba escoba, Integer nivelDeVision, Double nivelDeReflejos, Boolean poseeLaQuafle){
+        super(equipo, skill, peso, escoba, nivelDeReflejos, poseeLaQuafle);
         this.nivelDeVision= nivelDeVision;
     }
 
@@ -51,5 +52,17 @@ public class Buscador extends Jugador {
     public void golpearJugadorConBludger(Jugador unjugador) {
         unjugador.skill-=2;
         this.escoba.recibeUnGolpe();
-        this.encontroLaSnitch();    }
-}
+        this.encontroLaSnitch();
+        this.estaGolpeado=true;
+    }
+
+    public Boolean BuscadorEstaAturdidoUnTurno () { return this.esGroso() == true && this.estaGolpeado==true; }
+
+    public Boolean BuscadorAturdidoEsBlancoUtil() {return this.BuscadorEstaAturdidoUnTurno(); }
+
+    }
+
+
+
+
+

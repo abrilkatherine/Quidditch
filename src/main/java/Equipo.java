@@ -17,7 +17,8 @@ public class Equipo{
         return jugadores;
     }
 
-    public void SetJugadores(List<Jugador> jugadores) {
+    public void SetJugadores(Jugador jugador) {
+        jugadores.add(jugador);
     }
 
     /**PUNTO 3. EL equio gana puntos por meter gol**/
