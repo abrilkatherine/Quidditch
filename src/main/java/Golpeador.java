@@ -33,5 +33,10 @@ public class Golpeador extends Jugador {
         unjugador.skill-=2;
         this.escoba.recibeUnGolpe();
     }
+
+    @Override
+    public void juega() {
+
+    }
 }
 

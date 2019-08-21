@@ -47,7 +47,8 @@ public class Cazador extends Jugador{
     }
 
     /**4.PUNTO 3. el cazador pierde la Quaffle**/
-    public void pierdeLaQuaffle(){
+    @Override
+    public void juega(){
          this.poseeLaQuaffle=false;
     }
 
@@ -73,8 +74,6 @@ public class Cazador extends Jugador{
             this.skill+=5;
         }
     }
-
-
 }
 
 

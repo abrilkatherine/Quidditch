@@ -2,6 +2,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -21,6 +22,12 @@ public class BuscadorTest {
     public void habilidadJugador(){
         when(primeraNimbus.velocidadEscoba()).thenReturn(90.0);
         assertEquals(158.75, willy.habilidadJugador().doubleValue());
+    }
+
+    @Test
+    public void BuscadorNoEstaAturdido(){
+        willy.juega();
+        assertFalse(willy.BuscadorEstaAturdidoUnTurno());
     }
 
 }

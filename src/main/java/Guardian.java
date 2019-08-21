@@ -42,4 +42,9 @@ public class Guardian extends Jugador {
         unjugador.skill-=2;
         unjugador.escoba.recibeUnGolpe();
     }
+
+    @Override
+    public void juega() {
+
+    }
 }

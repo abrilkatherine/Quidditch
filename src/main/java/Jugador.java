@@ -84,6 +84,7 @@ public  abstract class Jugador {
 
     public abstract Boolean puedeBloquear(Cazador cazador);
     public abstract void golpearJugadorConBludger(Jugador unjugador);
+    public abstract void juega();
 
 
 }

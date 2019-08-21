@@ -60,6 +60,8 @@ public class Buscador extends Jugador {
 
     public Boolean BuscadorAturdidoEsBlancoUtil() {return this.BuscadorEstaAturdidoUnTurno(); }
 
+    public void juega(){}
+
     }
 
 
