@@ -39,4 +39,3 @@ public class Golpeador extends Jugador {
 
     }
 }
-

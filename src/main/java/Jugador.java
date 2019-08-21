@@ -20,7 +20,6 @@ public  abstract class Jugador {
         this.poseeLaQuaffle= poseeLaQuaffle;
 
     }
-
     /**
      * PUNTO 1.a: saber nivel de manejo de escoba de un jugador
      **/
