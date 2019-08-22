@@ -24,7 +24,12 @@ public  abstract class Jugador {
      * PUNTO 1.a: saber nivel de manejo de escoba de un jugador
      **/
     public Double nivelDeManejoDeEscoba() {
+
+        if(peso==0){
+            throw new ArithmeticException("No se puede dividir por 0. Revisar entrada de datos ");
+        }
         return skill / peso;
+
     }
 
     /**
