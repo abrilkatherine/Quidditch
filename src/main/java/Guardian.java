@@ -36,6 +36,9 @@ public class Guardian extends Jugador {
         return list.get(rand.nextInt(list.size()));
 
     }
+    public Boolean juega(Jugador jugador) {
+        return super.juega(jugador);
+    }
 
     @Override
     public void golpearJugadorConBludger(Jugador unjugador) {
@@ -43,8 +46,6 @@ public class Guardian extends Jugador {
         unjugador.escoba.recibeUnGolpe();
     }
 
-    @Override
-    public void juega() {
 
-    }
+
 }

@@ -4,6 +4,9 @@ public class Golpeador extends Jugador {
     private Double fuerza;
     private Boolean poseeLaQuaffle=false;
 
+    public Boolean juega(Jugador jugador) {
+        return super.juega(jugador);
+    }
     public Golpeador(Equipo equipo, Double skill, Double peso, Escoba escoba, Double nivelDeReflejos, Double punteria, Double fuerza, Boolean poseeLaQuaffle) {
         super(equipo, skill, peso, escoba, nivelDeReflejos, poseeLaQuaffle);
         this.punteria = punteria;
@@ -34,8 +37,5 @@ public class Golpeador extends Jugador {
         this.escoba.recibeUnGolpe();
     }
 
-    @Override
-    public void juega() {
 
-    }
 }

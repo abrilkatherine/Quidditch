@@ -11,6 +11,9 @@ public class Buscador extends Jugador {
     private Double turnos = 0.0;
     private Boolean estaGolpeado = false;
 
+    public Boolean juega(Jugador jugador) {
+        return super.juega(jugador);
+    }
     public Buscador(Equipo equipo, Double skill, Double peso, Escoba escoba, Integer nivelDeVision, Double nivelDeReflejos, Boolean poseeLaQuafle) {
         super(equipo, skill, peso, escoba, nivelDeReflejos, poseeLaQuafle);
         this.nivelDeVision = nivelDeVision;
@@ -57,6 +60,7 @@ public class Buscador extends Jugador {
         this.escoba.recibeUnGolpe();
         this.encontroLaSnitch();
         this.estaGolpeado = true;
+        this.jugadorEstaJugando= false;
     }
 
     public Boolean BuscadorEstaAturdidoUnTurno() {

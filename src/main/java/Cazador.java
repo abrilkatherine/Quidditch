@@ -3,6 +3,10 @@ public class Cazador extends Jugador{
     private Integer punteria;
     private Integer fuerza;
 
+    @Override
+    public Boolean juega(Jugador jugador) {
+        return super.juega(jugador);
+    }
 
     public void SetFuerza(Integer fuerza) {
         this.fuerza= fuerza;
@@ -47,7 +51,7 @@ public class Cazador extends Jugador{
     }
 
     /**4.PUNTO 3. el cazador pierde la Quaffle**/
-    @Override
+
     public void juega(){
          this.poseeLaQuaffle=false;
     }
@@ -61,6 +65,7 @@ public class Cazador extends Jugador{
         unjugador.skill-=2;
         this.escoba.recibeUnGolpe();
         unjugador.pierdeLaQuaffle();
+
     }
 
     public Boolean seBloqueaElTiro(Equipo equipoContrario) {

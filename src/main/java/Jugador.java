@@ -6,6 +6,7 @@ public  abstract class Jugador {
     protected Equipo equipo;
     protected Double nivelDeReflejos;
     protected Boolean poseeLaQuaffle;
+    protected Boolean jugadorEstaJugando;
 
     public void setPeso(Double peso) {
         this.peso = peso;
@@ -88,7 +89,9 @@ public  abstract class Jugador {
 
     public abstract Boolean puedeBloquear(Cazador cazador);
     public abstract void golpearJugadorConBludger(Jugador unjugador);
-    public abstract void juega();
+    public Boolean juega(Jugador jugador){
+      return  jugadorEstaJugando=true;
+    }
 
 
 }
