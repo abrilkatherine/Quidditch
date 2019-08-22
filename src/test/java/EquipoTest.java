@@ -14,13 +14,7 @@ public class EquipoTest {
     private Equipo equipo2;
     private Jugador jugadorNumero1;
     private Jugador jugadorNumero2;
-    private Jugador jugadorNumero3;
-    private Jugador jugadorNumero4;
-    private Jugador jugadorNumero5;
-    private Jugador jugadorNumero6;
-    private Jugador jugadorNumero7;
-    private Jugador jugadorNumero8;
-    private Jugador jugadorNumero9;
+
 
 
     @BeforeEach
