@@ -17,7 +17,7 @@ public class Equipo{
         return jugadores;
     }
 
-    public void agregarJugadores(Jugador jugador) throws NoSePuedenAgregarJugadoresException{
+    public void agregarJugadores(Jugador jugador) {
         if(jugadores.size()==7){
             throw new NoSePuedenAgregarJugadoresException("Maximo de jugadores por equipo");
         }
